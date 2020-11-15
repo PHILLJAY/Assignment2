@@ -17,7 +17,7 @@ public class StarsD {
                 }
                 System.out.println();
             //separate code for the second half
-            }else if(i>=(MAX_ROWS/2)){
+            }else {
             for (int z = 0; z < i-5; z++) {
                 System.out.print(" ");
             }
@@ -32,24 +32,5 @@ public class StarsD {
             }
         }
 
-//        for (int i = 0; i < (MAX_ROWS / 2); i++) {
-//            for (int z = 1; z < (5 - i); z++) {
-//                System.out.print(" ");
-//            }
-//            for (int z = 0; z < (((i + 1) * 2) - 1); z++) {
-//                System.out.print("*");
-//            }
-//            System.out.println();
-//        }
-//        for (int i = 0; i < (MAX_ROWS / 2); i++) {
-//            for (int z = 0; z < i; z++) {
-//                System.out.print(" ");
-//            }
-//            for (int z = 0; z < (((5-i) * 2) - 1); z++) {
-//                System.out.print("*");
-//            }
-//            System.out.println(" ");
-//
-//        }
     }
 }

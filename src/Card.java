@@ -10,10 +10,12 @@ public class Card {
 
     public void setSuit(String x){
         suit = x;
-    }//if at any point you need to change the card value or suit, use these commands to set the values.
+    }
+
+    //set and get commands for the suit and values
     public String getSuit(){
         return suit;
-    }//if at anypoint the card value needs to be accessed, use the get commands
+    }
     public void setValue(String x){
         value = x;
     }

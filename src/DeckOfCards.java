@@ -15,65 +15,38 @@ public class DeckOfCards {
 
                 if(i == 0){//runs if we are using the first suit, when i = 0
 
-                    switch (u){//this switch detects when the value of u is above 10, indicating a face card
-                        case 11:
-                            this.deck[length] = new Card("hearts", "jack");//depending on the number, this adds a face card to the deck in the current suit
-                            break;
-                        case 12:
-                            this.deck[length] = new Card("hearts", "queen");
-                            break;
-                        case 13:
-                            this.deck[length] = new Card("hearts", "king");
-                            break;
-                        default:
-                            this.deck[length] = new Card("hearts", Integer.toString(u));//if not a face card, create a new card with the current suit and
-                            //using the current loop number
+                    //this switch detects when the value of u is above 10, indicating a face card
+                    //using the current loop number
+                    switch (u) {
+                        case 11 -> this.deck[length] = new Card("hearts", "jack");//depending on the number, this adds a face card to the deck in the current suit
+                        case 12 -> this.deck[length] = new Card("hearts", "queen");
+                        case 13 -> this.deck[length] = new Card("hearts", "king");
+                        default -> this.deck[length] = new Card("hearts", Integer.toString(u));//if not a face card, create a new card with the current suit and
                     }
 
                 }
                 else if(i == 1){
-                    switch (u){
-                        case 11:
-                            this.deck[length] = new Card("diamonds", "jack");
-                            break;
-                        case 12:
-                            this.deck[length] = new Card("diamonds", "queen");
-                            break;
-                        case 13:
-                            this.deck[length] = new Card("diamonds", "king");
-                            break;
-                        default:
-                            this.deck[length] = new Card("diamonds", Integer.toString(u));
+                    switch (u) {
+                        case 11 -> this.deck[length] = new Card("diamonds", "jack");
+                        case 12 -> this.deck[length] = new Card("diamonds", "queen");
+                        case 13 -> this.deck[length] = new Card("diamonds", "king");
+                        default -> this.deck[length] = new Card("diamonds", Integer.toString(u));
                     }
                 }
                 else if(i == 2){
-                    switch (u){
-                        case 11:
-                            this.deck[length] = new Card("spades", "jack");
-                            break;
-                        case 12:
-                            this.deck[length] = new Card("spades", "queen");
-                            break;
-                        case 13:
-                            this.deck[length] = new Card("spades", "king");
-                            break;
-                        default:
-                            this.deck[length] = new Card("spades", Integer.toString(u));
+                    switch (u) {
+                        case 11 -> this.deck[length] = new Card("spades", "jack");
+                        case 12 -> this.deck[length] = new Card("spades", "queen");
+                        case 13 -> this.deck[length] = new Card("spades", "king");
+                        default -> this.deck[length] = new Card("spades", Integer.toString(u));
                     }
                 }
                 else{
-                    switch (u){
-                        case 11:
-                            this.deck[length] = new Card("clubs", "jack");
-                            break;
-                        case 12:
-                            this.deck[length] = new Card("clubs", "queen");
-                            break;
-                        case 13:
-                            this.deck[length] = new Card("clubs", "king");
-                            break;
-                        default:
-                            this.deck[length] = new Card("clubs", Integer.toString(u));
+                    switch (u) {
+                        case 11 -> this.deck[length] = new Card("clubs", "jack");
+                        case 12 -> this.deck[length] = new Card("clubs", "queen");
+                        case 13 -> this.deck[length] = new Card("clubs", "king");
+                        default -> this.deck[length] = new Card("clubs", Integer.toString(u));
                     }
                 }
                 length++;//adds one to the length as a new card has been added
@@ -107,7 +80,7 @@ public class DeckOfCards {
     public void ShowDeck(){
         for(int i = 0; i < 52; i++){
             System.out.println(this.deck[i].getSuit() + ": " + this.deck[i].getValue());
-        }//progressivly prints each card in the deck
+        }//progressively prints each card in the deck
     }
     public void showSub(){
         System.out.println("Your hand is :");
@@ -171,7 +144,7 @@ public class DeckOfCards {
 
         //if any of the suits return a value of the length of the subdeck
         //then return true
-        //if just one card is not of the smae suit, return false
+        //if just one card is not of the same suit, return false
         return h == subDeck.length || d == subDeck.length || s == subDeck.length || c == subDeck.length;
     }
     public int getCardsLeft(){

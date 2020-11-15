@@ -1,10 +1,9 @@
 class RationalNumber implements Comparable<RationalNumber> {
     private int numerator, denominator;
 
-    //-----------------------------------------------------------------
-    //  Constructor: Sets up the rational number by ensuring a nonzero
-    //  denominator and making only the numerator signed.
-    //-----------------------------------------------------------------
+
+    //  Constructor that changes denom to 1 if its set as zero and stores the sign in the numerator
+
     public RationalNumber(int numer, int denom)
     {
         if (denom == 0)
@@ -22,17 +21,14 @@ class RationalNumber implements Comparable<RationalNumber> {
         reduce();
     }
 
-    //-----------------------------------------------------------------
-    //  Returns the numerator of this rational number.
-    //-----------------------------------------------------------------
+    //Returns the numerator of the rational number
     public int getNumerator()
     {
         return numerator;
     }
 
-    //-----------------------------------------------------------------
-    //  Returns the denominator of this rational number.
-    //-----------------------------------------------------------------
+
+    //Returns the denominator of the rational number
     public int getDenominator()
     {
         return denominator;
@@ -42,11 +38,11 @@ class RationalNumber implements Comparable<RationalNumber> {
         return new RationalNumber(denominator, numerator);
     }
 
-    //-----------------------------------------------------------------
-    //  Adds this rational number to the one passed as a parameter.
-    //  A common denominator is found by multiplying the individual
-    //  denominators.
-    //-----------------------------------------------------------------
+
+    //Adds this rational number to the one passed as a parameter.
+    //A common denominator is found by multiplying the individual
+    //denominators.
+
     public RationalNumber add(RationalNumber op2)
     {
         int commonDenominator = denominator * op2.getDenominator();
@@ -82,10 +78,10 @@ class RationalNumber implements Comparable<RationalNumber> {
         return multiply(op2.reciprocal());
     }
 
-    //-----------------------------------------------------------------
+
     //  Determines if this rational number is equal to the one passed
     //  as a parameter. Assumes they are both reduced.
-    //-----------------------------------------------------------------
+
     public boolean isLike(RationalNumber op2)
     {
         return ( numerator == op2.getNumerator() &&
@@ -133,7 +129,6 @@ class RationalNumber implements Comparable<RationalNumber> {
         double tolerance = 1/0.0001;//computes the inverse of the tolerance
         x1 = x1*tolerance;//multiply both these numbers by the inverse tolerance so that anything larger than the tolerance
         x2 = x2*tolerance;//becomes larger than the decimal point
-
 
         //via the inverse of tolerance. If the numbers are within the tolerance range, then the result will be 0
         return (int)(x1-x2);
